@@ -1,0 +1,88 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React from 'react';
+import { motion } from 'motion/react';
+import { Smartphone, Maximize, Touchpad, Share2, MessageCircle } from 'lucide-react';
+import { getDifferentSectionWhatsAppUrl } from '../config/siteConfig.ts';
+
+export const WhyUsCards: React.FC = () => {
+  const waUrl = getDifferentSectionWhatsAppUrl();
+
+  const cards = [
+    {
+      icon: Smartphone,
+      title: "Your photo as the app icon",
+      desc: "Every guest gets your invitation on their home screen. They see your faces every time they open their phone.",
+    },
+    {
+      icon: Maximize,
+      title: "Opens like a real app",
+      desc: "Full screen, no browser bars. Smooth, stylish and made for phones.",
+    },
+    {
+      icon: Touchpad,
+      title: "Everything in one tap",
+      desc: "Date, venue, map and RSVP are one tap away. Nothing is buried in a chat.",
+    },
+    {
+      icon: Share2,
+      title: "Share once, reach everyone",
+      desc: "Send one link on WhatsApp to your whole family and all your friends.",
+    },
+  ];
+
+  return (
+    <section className="relative py-12 sm:py-16 px-5 max-w-[1100px] mx-auto box-border min-w-0">
+      <div className="text-center max-w-2xl mx-auto mb-10">
+        <h2 className="font-syne font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#12324A] tracking-tight">
+          What makes us different
+        </h2>
+      </div>
+
+      {/* 4 Glass Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+        {cards.map((card, index) => {
+          const Icon = card.icon;
+          return (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="liquid-glass rounded-[28px] p-6 sm:p-8 border border-white/90 shadow-lg flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#DDF3F8] text-[#2A8FBD] flex items-center justify-center mb-4 shadow-sm border border-white">
+                  <Icon className="w-6 h-6" />
+                </div>
+                <h3 className="font-syne font-extrabold text-xl text-[#12324A] mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-base text-[#12324A]/80 font-medium leading-relaxed">
+                  {card.desc}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Below the cards, a button: "Chat on WhatsApp" */}
+      <div className="flex justify-center">
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-[56px] px-8 rounded-full font-outfit font-semibold text-base text-white bg-gradient-to-r from-[#25D366] to-[#1FB85A] shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2.5 no-underline cursor-pointer select-none border border-white/30"
+        >
+          <MessageCircle className="w-5 h-5 fill-white" />
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </section>
+  );
+};

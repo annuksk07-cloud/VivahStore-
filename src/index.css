@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-lg: 900px;
+
+  --color-mist: #F4FBFD;
+  --color-foam: #DDF3F8;
+  --color-aqua: #7FD6E3;
+  --color-ocean: #2A8FBD;
+  --color-ink: #12324A;
+  --color-wa: #25D366;
+
+  --font-syne: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-outfit: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-baloo: 'Baloo 2', cursive, sans-serif;
+}
+
+:root {
+  --mist: #F4FBFD;
+  --foam: #DDF3F8;
+  --aqua: #7FD6E3;
+  --ocean: #2A8FBD;
+  --ink: #12324A;
+  --wa: #25D366;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100dvh;
+}
+
+body {
+  font-family: var(--font-outfit), 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  background-color: transparent;
+  min-height: 100dvh;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+section {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Typography Helpers */
+.font-syne {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-baloo {
+  font-family: 'Baloo 2', cursive;
+}
+
+/* Glassmorphism Liquid Cards - Real Water Visible Through */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 12px 32px -8px rgba(42, 143, 189, 0.15),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.liquid-glass-accent {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    0 16px 36px -10px rgba(42, 143, 189, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.liquid-glass-darker {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Gradient Text */
+.text-gradient-ocean {
+  background: linear-gradient(135deg, #12324A 0%, #2A8FBD 60%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-aqua {
+  background: linear-gradient(135deg, #2A8FBD 0%, #0284c7 40%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Horizontal scrollbar hidden for carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Liquid Blob Drift Animations */
+@keyframes ripple-effect {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.6);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple-effect 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Desktop Button Light Streak Animation (0.7s) */
+@keyframes desktop-light-streak {
+  0% {
+    transform: translateX(-180%) skewX(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(380%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .group\/btn:hover .desktop-btn-streak {
+    animation: desktop-light-streak 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+}
+
+@keyframes blob-drift-1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(40px, -60px, 0) scale(1.1);
+  }
+  66% {
+    transform: translate3d(-30px, 30px, 0) scale(0.95);
+  }
+}
+
+@keyframes blob-drift-2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  40% {
+    transform: translate3d(-50px, 50px, 0) scale(1.15);
+  }
+  75% {
+    transform: translate3d(35px, -40px, 0) scale(0.9);
+  }
+}
+
+@keyframes blob-drift-3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(60px, 40px, 0) scale(1.08);
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.95);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.animate-blob-1 {
+  animation: blob-drift-1 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-blob-2 {
+  animation: blob-drift-2 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-blob-3 {
+  animation: blob-drift-3 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.animate-float {
+  animation: float-subtle 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.animate-wave {
+  animation: wave-flow 14s linear infinite;
+  will-change: transform;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-blob-3,
+  .animate-float,
+  .animate-pulse-ring,
+  .animate-wave {
+    animation: none !important;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Bento box rounded radius 28px standard */
+.bento-radius {
+  border-radius: 28px;
+}

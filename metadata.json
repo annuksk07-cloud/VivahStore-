@@ -1,0 +1,6 @@
+{
+  "name": "Vivah.link – Modern Wedding Invitation Websites",
+  "description": "Shaadi ka card, ab ek link. Futuristic interactive wedding invitation websites for Indian couples with RSVP, live maps, music, countdown, and instant WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
