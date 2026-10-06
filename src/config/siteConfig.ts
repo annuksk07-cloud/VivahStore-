@@ -49,8 +49,8 @@ export const SITE_CONFIG: SiteConfig = {
   businessName: "Vivah Store",
   brandDomain: "vivahstore.com",
   whatsappNumber: "917827357021",
-  instagramHandle: "@vivahstore",
-  instagramUrl: "https://instagram.com/vivahstore",
+  instagramHandle: "@vivaahstoree",
+  instagramUrl: "https://www.instagram.com/vivaahstoree?stkn=MXMxNWN3NnNmcXY1OA==",
   designs: DESIGNS,
 };
 
