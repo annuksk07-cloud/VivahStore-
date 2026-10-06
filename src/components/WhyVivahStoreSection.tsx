@@ -6,39 +6,39 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Smartphone, Maximize, Touchpad, Share2, MessageCircle } from 'lucide-react';
-import { getDifferentSectionWhatsAppUrl } from '../config/siteConfig.ts';
+import { buildWhatsAppUrl } from '../config/siteConfig.ts';
 
-export const WhyUsCards: React.FC = () => {
-  const waUrl = getDifferentSectionWhatsAppUrl();
+export const WhyVivahStoreSection: React.FC = () => {
+  const waUrl = buildWhatsAppUrl("Hi Vivah Store! I saw your website and want to know more about the app-style wedding invitation.");
 
   const cards = [
     {
       icon: Smartphone,
-      title: "Your photo as the app icon",
-      desc: "Every guest gets your invitation on their home screen. They see your faces every time they open their phone.",
+      title: "Your photo is the app icon",
+      desc: "Guests see your faces every time they open their phone.",
     },
     {
       icon: Maximize,
-      title: "Opens like a real app",
-      desc: "Full screen, no browser bars. Smooth, stylish and made for phones.",
+      title: "Opens full screen",
+      desc: "No browser bars. Smooth, stylish, made for phones.",
     },
     {
       icon: Touchpad,
       title: "Everything in one tap",
-      desc: "Date, venue, map and RSVP are one tap away. Nothing is buried in a chat.",
+      desc: "Date, venue, map and RSVP. Nothing buried in a chat.",
     },
     {
       icon: Share2,
       title: "Share once, reach everyone",
-      desc: "Send one link on WhatsApp to your whole family and all your friends.",
+      desc: "One link on WhatsApp for your whole family.",
     },
   ];
 
   return (
-    <section className="relative py-12 sm:py-16 px-5 max-w-[1100px] mx-auto box-border min-w-0">
+    <section id="why-us" className="relative py-12 sm:py-16 px-5 max-w-[1100px] mx-auto box-border min-w-0">
       <div className="text-center max-w-2xl mx-auto mb-10">
         <h2 className="font-syne font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#12324A] tracking-tight">
-          What makes us different
+          Your invitation, always on their home screen.
         </h2>
       </div>
 
@@ -71,7 +71,7 @@ export const WhyUsCards: React.FC = () => {
         })}
       </div>
 
-      {/* Below the cards, a button: "Chat on WhatsApp" */}
+      {/* Button */}
       <div className="flex justify-center">
         <a
           href={waUrl}

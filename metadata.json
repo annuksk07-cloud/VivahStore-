@@ -1,6 +1,6 @@
 {
-  "name": "Vivah.link – Modern Wedding Invitation Websites",
-  "description": "Shaadi ka card, ab ek link. Futuristic interactive wedding invitation websites for Indian couples with RSVP, live maps, music, countdown, and instant WhatsApp ordering.",
+  "name": "Vivah Store – App-Style Wedding Invitations",
+  "description": "Your wedding invitation, now an app icon. Guests add it to their home screen with your photo as the icon.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

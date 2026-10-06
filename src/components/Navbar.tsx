@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, LayoutGrid, HelpCircle, MessageCircle, HelpCircle as QuestionIcon, ShieldCheck } from 'lucide-react';
+import { Sparkles, LayoutGrid, MessageCircle, HelpCircle as QuestionIcon, ShieldCheck } from 'lucide-react';
 import { SITE_CONFIG, buildWhatsAppUrl } from '../config/siteConfig.ts';
 
 interface NavbarProps {
@@ -14,13 +14,13 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
-  const navMsg = "Hi! I saw your website and want to know more about the app-style wedding invitation.";
+  const navMsg = "Hi Vivah Store! I saw your website and want to know more about the app-style wedding invitation.";
   const navWaUrl = buildWhatsAppUrl(navMsg);
 
   const mobileNavItems = [
     { id: 'designs', label: 'Designs', icon: LayoutGrid },
     { id: 'how-it-works', label: 'Steps', icon: Sparkles },
-    { id: 'why-us', label: 'Why us', icon: ShieldCheck },
+    { id: 'why-us', label: 'Why Us', icon: ShieldCheck },
     { id: 'questions', label: 'Questions', icon: QuestionIcon },
     { id: 'whatsapp', label: 'WhatsApp', icon: MessageCircle, isWhatsApp: true },
   ];
@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
           <button
             onClick={() => onNavigate('hero')}
             className="flex items-center gap-2 cursor-pointer select-none text-left min-h-[48px] py-1"
-            aria-label="Vivah.link Home"
+            aria-label="Vivah Store Home"
           >
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#7FD6E3] to-[#2A8FBD] flex items-center justify-center text-white shadow-sm">
               <Sparkles className="w-4 h-4" />
@@ -85,8 +85,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             </span>
           </button>
 
-          {/* Nav Links: Designs, How it works, Why us, Questions */}
-          <div className="flex items-center gap-8 text-[15px] font-outfit font-semibold text-[#12324A]/80">
+          {/* Nav Links: Designs, How it works, Why Vivah Store, Questions */}
+          <div className="flex items-center gap-7 text-[15px] font-outfit font-semibold text-[#12324A]/80">
             <button
               onClick={() => onNavigate('designs')}
               className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none ${
@@ -104,13 +104,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             </button>
 
             <button
-              onClick={() => onNavigate('how-it-works')}
+              onClick={() => onNavigate('why-us')}
               className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none ${
-                activeSection === 'how-it-works' ? 'text-[#2A8FBD] font-bold' : ''
+                activeSection === 'why-us' ? 'text-[#2A8FBD] font-bold' : ''
               }`}
             >
-              How it works
-              {activeSection === 'how-it-works' && (
+              Why Vivah Store
+              {activeSection === 'why-us' && (
                 <motion.div
                   layoutId="desktop-active-dot"
                   className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#2A8FBD]"
@@ -120,13 +120,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             </button>
 
             <button
-              onClick={() => onNavigate('why-us')}
+              onClick={() => onNavigate('how-it-works')}
               className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none ${
-                activeSection === 'why-us' ? 'text-[#2A8FBD] font-bold' : ''
+                activeSection === 'how-it-works' ? 'text-[#2A8FBD] font-bold' : ''
               }`}
             >
-              Why us
-              {activeSection === 'why-us' && (
+              How it works
+              {activeSection === 'how-it-works' && (
                 <motion.div
                   layoutId="desktop-active-dot"
                   className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#2A8FBD]"

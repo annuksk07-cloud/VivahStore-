@@ -20,7 +20,6 @@ export const FinalCta: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="liquid-glass-accent rounded-[36px] p-8 sm:p-14 border border-white/90 shadow-2xl text-center relative overflow-hidden"
       >
-        {/* Soft Background Aqua Glow */}
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-[#7FD6E3]/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-[#2A8FBD]/20 rounded-full blur-3xl pointer-events-none" />
 
@@ -31,11 +30,11 @@ export const FinalCta: React.FC = () => {
           </div>
 
           <h2 className="font-syne font-extrabold text-2xl sm:text-4xl lg:text-5xl text-[#12324A] tracking-tight mb-4">
-            Ready to make your invitation an app icon?
+            Make your invitation an app icon.
           </h2>
 
           <p className="text-base sm:text-xl text-[#12324A]/85 font-medium leading-relaxed mb-8">
-            Send us your names, date, venue and favourite design. We will take it from there.
+            Send your names, date, venue and favourite design.
           </p>
 
           <div className="flex justify-center">

@@ -8,31 +8,27 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export const FaqSection: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default, only one open at a time
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      q: "Is it a real app?",
-      a: "It is a web app. It looks and feels like an app, but guests do not need an app store.",
+      q: "Is it an app?",
+      a: "Yes. It is an app invitation. It sits on the home screen with your photo and opens full screen. No app store needed.",
     },
     {
-      q: "Do guests need to download anything?",
-      a: "No. They open your link. Adding it to the home screen is optional.",
+      q: "Do guests download anything?",
+      a: "No. They open your link and tap Add.",
     },
     {
       q: "Does it work on iPhone?",
-      a: "Yes. On iPhone, tap Share, then Add to Home Screen. On Android, a pop-up helps them add it.",
+      a: "Yes. Tap Share, then Add to Home Screen.",
     },
     {
-      q: "Can our photo be the icon?",
-      a: "Yes. Your photo becomes the app icon.",
+      q: "What if a guest skips Add?",
+      a: "The link still opens in the browser.",
     },
     {
-      q: "What if a guest does not add it?",
-      a: "The link still works in the browser.",
-    },
-    {
-      q: "Can it be in Hindi?",
+      q: "Is Hindi available?",
       a: "Yes. Hindi, English or both.",
     },
     {
@@ -41,7 +37,7 @@ export const FaqSection: React.FC = () => {
     },
     {
       q: "What is the price?",
-      a: "It depends on the design and features. Message us on WhatsApp for a quote.",
+      a: "It depends on the design. Message us on WhatsApp for a quote.",
     },
   ];
 

@@ -20,7 +20,7 @@ export const CompareSection: React.FC = () => {
     <section className="relative py-12 sm:py-16 px-3 sm:px-5 max-w-[1100px] mx-auto box-border min-w-0">
       <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
         <h2 className="font-syne font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#12324A] tracking-tight">
-          Paper card, PDF, or an app invitation?
+          Paper card, PDF or app invitation?
         </h2>
       </div>
 
@@ -46,8 +46,8 @@ export const CompareSection: React.FC = () => {
             {/* Highlighted with Aqua Glow */}
             <div className="relative rounded-2xl bg-gradient-to-tr from-[#7FD6E3]/30 to-[#2A8FBD]/20 p-1.5 sm:p-2.5 border border-[#7FD6E3]/50 shadow-md shadow-[#7FD6E3]/20">
               <span className="font-syne font-extrabold text-[11px] sm:text-sm text-[#2A8FBD] flex items-center justify-center gap-1">
-                <Sparkles className="w-3 h-3 text-[#2A8FBD] hidden sm:inline-block" />
-                Our app invitation
+                <Sparkles className="w-3.5 h-3.5 text-[#2A8FBD] hidden sm:inline-block" />
+                Vivah Store
               </span>
             </div>
           </div>
@@ -78,7 +78,7 @@ export const CompareSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Our app invitation (Highlighted Column) */}
+                {/* Vivah Store (Highlighted Column) */}
                 <div className="flex justify-center items-center">
                   <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-md shadow-emerald-500/30">
                     <Check className="w-4 h-4 sm:w-5 sm:h-5 stroke-[3]" />

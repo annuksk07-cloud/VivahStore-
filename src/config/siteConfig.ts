@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  * 
  * =====================================================================
- * VIVAH.LINK - MASTER CONFIGURATION
+ * VIVAH STORE - MASTER CONFIGURATION
  * All verified text, phone numbers, and official FACTS.
  * =====================================================================
  */
@@ -36,15 +36,6 @@ export const DESIGNS: WeddingDesign[] = [
     mobileId:'1uU51Bg-1O4QC1I8Z41xLjC370c38jwBB' },
 ];
 
-export const INCLUDED_FEATURES = [
-  'RSVP',
-  'Background music',
-  'Countdown',
-  'Google Maps',
-  'Photo gallery',
-  'Hindi and English',
-] as const;
-
 export interface SiteConfig {
   businessName: string;
   brandDomain: string;
@@ -55,35 +46,37 @@ export interface SiteConfig {
 }
 
 export const SITE_CONFIG: SiteConfig = {
-  businessName: "Vivah.link",
-  brandDomain: "vivah.link",
-  whatsappNumber: "9876543210",
-  instagramHandle: "@vivah.link",
-  instagramUrl: "https://instagram.com/vivah.link",
+  businessName: "Vivah Store",
+  brandDomain: "vivahstore.com",
+  whatsappNumber: "917827357021",
+  instagramHandle: "@vivahstore",
+  instagramUrl: "https://instagram.com/vivahstore",
   designs: DESIGNS,
 };
 
-export function buildWhatsAppUrl(customMessage?: string): string {
-  const number = SITE_CONFIG.whatsappNumber.replace(/\D/g, "");
-  const defaultText = "Hi! I saw your website and want to know more about the app-style wedding invitation.";
-  const text = customMessage || defaultText;
-  return `https://wa.me/91${number}?text=${encodeURIComponent(text)}`;
+export function getCleanWhatsAppNumber(): string {
+  let num = SITE_CONFIG.whatsappNumber.replace(/\D/g, "");
+  if (!num.startsWith("91") && num.length === 10) {
+    num = `91${num}`;
+  }
+  return num;
 }
 
-export function getDifferentSectionWhatsAppUrl(): string {
-  const number = SITE_CONFIG.whatsappNumber.replace(/\D/g, "");
-  const message = "Hi! I like the home-screen app invitation. Can you tell me more?";
-  return `https://wa.me/91${number}?text=${encodeURIComponent(message)}`;
+export function buildWhatsAppUrl(customMessage?: string): string {
+  const number = getCleanWhatsAppNumber();
+  const defaultText = "Hi Vivah Store! I saw your website and want to know more about the app-style wedding invitation.";
+  const text = customMessage || defaultText;
+  return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }
 
 export function getHowItWorksWhatsAppUrl(): string {
-  const number = SITE_CONFIG.whatsappNumber.replace(/\D/g, "");
-  const message = "Hi! I want to start my wedding invitation. Names: , Date: , Venue: ";
-  return `https://wa.me/91${number}?text=${encodeURIComponent(message)}`;
+  const number = getCleanWhatsAppNumber();
+  const message = "Hi Vivah Store! I want to start my wedding invitation. Names: , Date: , Venue: ";
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
 export function getFinalCtaWhatsAppUrl(): string {
-  const number = SITE_CONFIG.whatsappNumber.replace(/\D/g, "");
-  const message = "Hi! I want an app-style wedding invitation.\nNames: \nDate: \nVenue: \nDesign: ";
-  return `https://wa.me/91${number}?text=${encodeURIComponent(message)}`;
+  const number = getCleanWhatsAppNumber();
+  const message = "Hi Vivah Store! I want an app-style wedding invitation.\nNames: \nDate: \nVenue: \nDesign: ";
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }

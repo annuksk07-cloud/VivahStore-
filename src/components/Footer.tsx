@@ -8,7 +8,7 @@ import { Sparkles, MessageCircle, Instagram } from 'lucide-react';
 import { SITE_CONFIG, buildWhatsAppUrl } from '../config/siteConfig.ts';
 
 export const Footer: React.FC = () => {
-  const footerMsg = "Hi! I saw your website and want to know more about the app-style wedding invitation.";
+  const footerMsg = "Hi Vivah Store! I saw your website and want to know more about the app-style wedding invitation.";
   const waUrl = buildWhatsAppUrl(footerMsg);
 
   return (

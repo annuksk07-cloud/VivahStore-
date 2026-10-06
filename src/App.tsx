@@ -7,13 +7,11 @@ import React, { useState, useEffect } from 'react';
 import WaterBackground from './components/WaterBackground.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { HeroSection } from './components/HeroSection.tsx';
-import { WhatIsItSection } from './components/WhatIsItSection.tsx';
-import { ProblemSection } from './components/ProblemSection.tsx';
-import { WhyUsCards } from './components/WhyUsCards.tsx';
-import { CompareSection } from './components/CompareSection.tsx';
+import { QuickStrip } from './components/QuickStrip.tsx';
 import { DesignsCarousel } from './components/DesignsCarousel.tsx';
+import { WhyVivahStoreSection } from './components/WhyVivahStoreSection.tsx';
+import { CompareSection } from './components/CompareSection.tsx';
 import { HowItWorksSection } from './components/HowItWorksSection.tsx';
-import { ImagineSection } from './components/ImagineSection.tsx';
 import { FaqSection } from './components/FaqSection.tsx';
 import { FinalCta } from './components/FinalCta.tsx';
 import { Footer } from './components/Footer.tsx';
@@ -36,7 +34,7 @@ export default function App() {
   // Scroll listener to update active navigation tab based on viewport position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'why-us', 'designs', 'how-it-works', 'questions'];
+      const sections = ['hero', 'designs', 'why-us', 'how-it-works', 'questions'];
       const scrollY = window.scrollY;
 
       for (const section of sections) {
@@ -62,62 +60,52 @@ export default function App() {
 
   return (
     <div className="relative min-h-[100dvh] w-full max-w-[100vw] overflow-x-hidden bg-transparent text-[#12324A] flex flex-col selection:bg-[#7FD6E3]/35 pb-[130px]">
-      {/* 1. Real Full-Screen WebGL Water Canvas Background */}
+      {/* 1. Full-Screen WebGL Water Background */}
       <WaterBackground />
 
-      {/* 2. Top and Bottom Floating Navigation */}
+      {/* 2. Navigation */}
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 
-      {/* Main Content Sections in Exact Required Order */}
+      {/* Main Content: Exact Required Order */}
       <main className="relative z-10 flex-1 flex flex-col">
-        {/* Section 2: HERO */}
+        {/* 1. Hero */}
         <HeroSection onOpenDemo={handleOpenDemoById} />
+
+        {/* 2. Quick strip */}
+        <QuickStrip />
 
         <WaveDivider className="my-2 sm:my-4" />
 
-        {/* Section 3: "What is it?" */}
-        <WhatIsItSection />
+        {/* 3. Designs */}
+        <DesignsCarousel />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* Section 4: "The problem" (id: why-us) */}
-        <ProblemSection />
-
-        {/* Section 5: "What makes us different" */}
-        <WhyUsCards />
+        {/* 4. Why Vivah Store */}
+        <WhyVivahStoreSection />
 
         <WaveDivider className="my-2 sm:my-4" />
 
-        {/* Section 6: "Compare" */}
+        {/* 5. Compare */}
         <CompareSection />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* Section 7: DESIGNS section (id: designs) */}
-        <DesignsCarousel />
-
-        <WaveDivider className="my-2 sm:my-4" />
-
-        {/* Section 8: "How it works" (id: how-it-works) */}
+        {/* 6. How it works */}
         <HowItWorksSection />
 
-        <WaveDivider flip className="my-2 sm:my-4" />
-
-        {/* Section 9: "Imagine" */}
-        <ImagineSection />
-
         <WaveDivider className="my-2 sm:my-4" />
 
-        {/* Section 10: "Questions" (id: questions) */}
+        {/* 7. Questions */}
         <FaqSection />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* Section 11: FINAL CTA */}
+        {/* 8. Final CTA */}
         <FinalCta />
       </main>
 
-      {/* Section 12: FOOTER */}
+      {/* 9. Footer */}
       <Footer />
 
       {/* Floating WhatsApp Action Button */}

@@ -3,23 +3,80 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle, Sparkles, Smartphone, ArrowDown } from 'lucide-react';
 import { buildWhatsAppUrl } from '../config/siteConfig.ts';
+
+/* =========================================================================
+   HERO PHONE MOCKUP APP ICONS CONFIGURATION
+   ========================================================================= */
+const HERO_APP_ICONS = [
+  {
+    driveId: '19B9Iv3C7RmVvPkBHjHS5NvdyXivUGjcH',
+    label: 'Ananya Aarav',
+  },
+  {
+    driveId: '1nqJ5gb6haQ3eNfprUiXKNSBqRYPrOSfu',
+    label: 'Aangan Se Mandap',
+  },
+  {
+    driveId: '18m3hlR6dm6AArrLA46kaTyBd38pqRsYa',
+    label: 'VEDIKARUDR',
+  },
+  {
+    driveId: '1Vqx96c00SfB3eemwMbFJJiAb7eKttBrD',
+    label: 'Rashmi Vijay',
+  },
+];
+
+const HeroAppIconImage: React.FC<{
+  driveId: string;
+  alt: string;
+}> = ({ driveId, alt }) => {
+  const [srcStep, setSrcStep] = useState<0 | 1 | 2>(0);
+
+  const sources = [
+    `https://drive.google.com/thumbnail?id=${driveId}&sz=w512`,
+    `https://lh3.googleusercontent.com/d/${driveId}=w512`,
+  ];
+
+  const handleError = () => {
+    if (srcStep === 0) setSrcStep(1);
+    else setSrcStep(2);
+  };
+
+  if (srcStep === 2) {
+    return (
+      <div className="w-full h-full bg-gradient-to-tr from-[#2A8FBD] to-[#5BC3E3] flex items-center justify-center text-white text-[10px] font-bold">
+        {alt.slice(0, 2)}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={sources[srcStep]}
+      alt={alt}
+      loading="eager"
+      onError={handleError}
+      className="w-full h-full object-cover"
+    />
+  );
+};
 
 interface HeroSectionProps {
   onOpenDemo: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
-  const heroMsg = "Hi! I saw your website and want to know more about the app-style wedding invitation.";
+  const heroMsg = "Hi Vivah Store! I saw your website and want to know more about the app-style wedding invitation.";
   const heroWaUrl = buildWhatsAppUrl(heroMsg);
 
   return (
     <section
       id="hero"
-      className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-5 max-w-[1100px] mx-auto box-border min-w-0"
+      className="relative pt-24 sm:pt-32 pb-8 sm:pb-12 px-5 max-w-[1100px] mx-auto box-border min-w-0"
     >
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-12 items-center">
         {/* Left Column: Headline, Copy, Actions */}
@@ -45,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
 
           {/* Sub-line */}
           <p className="text-base sm:text-lg text-[#12324A]/85 font-medium leading-relaxed mb-8 max-w-xl">
-            We turn your invitation into a stylish app-like website. Guests add it to their phone's home screen with your photo as the icon. One tap, and your wedding is right there.
+            Guests add it to their home screen with your photo as the icon. One tap and your wedding is right there.
           </p>
 
           {/* Buttons */}
@@ -115,23 +172,44 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
                 </p>
 
                 <div className="grid grid-cols-3 gap-y-6 gap-x-4 place-items-center px-2">
-                  {/* Regular dummy app icons */}
-                  <div className="flex flex-col items-center gap-1 opacity-40">
-                    <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center" />
-                    <span className="text-[9px] text-white/60">Camera</span>
+                  {/* TOP ROW: 3 DESIGN APP ICONS (Aangan Se Mandap, VEDIKARUDR, Rashmi Vijay) */}
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/50 shadow-md bg-white/20 backdrop-blur-md">
+                      <HeroAppIconImage
+                        driveId={HERO_APP_ICONS[1].driveId}
+                        alt={HERO_APP_ICONS[1].label}
+                      />
+                    </div>
+                    <span className="text-[9px] text-white/90 font-medium tracking-tight truncate max-w-[68px] text-center">
+                      {HERO_APP_ICONS[1].label}
+                    </span>
                   </div>
 
-                  <div className="flex flex-col items-center gap-1 opacity-40">
-                    <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center" />
-                    <span className="text-[9px] text-white/60">Photos</span>
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/50 shadow-md bg-white/20 backdrop-blur-md">
+                      <HeroAppIconImage
+                        driveId={HERO_APP_ICONS[2].driveId}
+                        alt={HERO_APP_ICONS[2].label}
+                      />
+                    </div>
+                    <span className="text-[9px] text-white/90 font-medium tracking-tight truncate max-w-[68px] text-center">
+                      {HERO_APP_ICONS[2].label}
+                    </span>
                   </div>
 
-                  <div className="flex flex-col items-center gap-1 opacity-40">
-                    <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center" />
-                    <span className="text-[9px] text-white/60">WhatsApp</span>
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/50 shadow-md bg-white/20 backdrop-blur-md">
+                      <HeroAppIconImage
+                        driveId={HERO_APP_ICONS[3].driveId}
+                        alt={HERO_APP_ICONS[3].label}
+                      />
+                    </div>
+                    <span className="text-[9px] text-white/90 font-medium tracking-tight truncate max-w-[68px] text-center">
+                      {HERO_APP_ICONS[3].label}
+                    </span>
                   </div>
 
-                  {/* PROMINENT WEDDING COUPLE APP ICON WITH PULSING RING */}
+                  {/* PROMINENT WEDDING COUPLE APP ICON WITH PULSING RING (Ananya Aarav) */}
                   <div className="flex flex-col items-center gap-1.5 relative col-span-3 my-2">
                     {/* Soft Pulsing Aqua Ring */}
                     <div className="relative">
@@ -140,23 +218,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
                       
                       {/* Couple Photo App Icon */}
                       <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-2 border-white shadow-xl bg-gradient-to-tr from-[#2A8FBD] to-[#5BC3E3] flex items-center justify-center">
-                        <img
-                          src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=300&q=80"
-                          alt="Couple photo app icon"
-                          className="w-full h-full object-cover"
+                        <HeroAppIconImage
+                          driveId={HERO_APP_ICONS[0].driveId}
+                          alt={HERO_APP_ICONS[0].label}
                         />
                       </div>
                     </div>
 
                     <span className="text-xs font-bold text-white tracking-wide shadow-sm mt-1">
-                      Ananya & Aarav
+                      {HERO_APP_ICONS[0].label}
                     </span>
                     <span className="text-[9px] text-[#7FD6E3] font-semibold bg-[#7FD6E3]/20 px-2 py-0.5 rounded-full border border-[#7FD6E3]/30">
                       Wedding App Icon
                     </span>
                   </div>
 
-                  {/* More dummy app icons */}
+                  {/* BOTTOM ROW: UNTOUCHED (Maps, Music, Notes) */}
                   <div className="flex flex-col items-center gap-1 opacity-40">
                     <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center" />
                     <span className="text-[9px] text-white/60">Maps</span>
@@ -174,7 +251,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
                 </div>
               </div>
 
-              {/* Bottom Dock */}
+              {/* Bottom Dock (UNTOUCHED) */}
               <div className="bg-white/10 backdrop-blur-md rounded-3xl p-2.5 flex justify-around items-center border border-white/10 mt-auto">
                 <div className="w-10 h-10 rounded-xl bg-white/20" />
                 <div className="w-10 h-10 rounded-xl bg-white/20" />
