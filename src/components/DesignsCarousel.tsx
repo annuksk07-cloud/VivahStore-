@@ -15,25 +15,25 @@ const LIVE_DESIGNS = [
   {
     no: '01',
     name: 'Aangan Se Mandap',
-    live: 'https://angan-ki-duniya.vercel.app/',
+    live: 'https://angan-ki-duniya.vercel.app/invite',
     mockup: 'https://drive.google.com/file/d/1bMdF3fOqkJDmVCXhNCiQ48n8ctqMSIzE/view?usp=drivesdk',
   },
   {
     no: '02',
     name: 'VEDIKARUDR',
-    live: 'https://vedikarudr.netlify.app/',
+    live: 'https://vedika-rudra.vercel.app/invite',
     mockup: 'https://drive.google.com/file/d/1AmAE2CViEThanERxiPzv6G3AGLZ0VQ8L/view?usp=drivesdk',
   },
   {
     no: '03',
     name: 'Ananya Aarav',
-    live: 'https://ananyaaaravwed.netlify.app/',
+    live: 'https://aarav-ananya-nine.vercel.app/invite',
     mockup: 'https://drive.google.com/file/d/1aD5yY6eejTelCuo6E-rSZoSmGzI0NEpX/view?usp=drivesdk',
   },
   {
     no: '04',
     name: 'Rashmi Vijay',
-    live: 'https://rashmikvijay.netlify.app/',
+    live: 'https://rashmika-vijay.vercel.app/invite',
     mockup: 'https://drive.google.com/file/d/1uU51Bg-1O4QC1I8Z41xLjC370c38jwBB/view?usp=drivesdk',
   },
 ];

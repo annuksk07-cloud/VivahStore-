@@ -19,19 +19,19 @@ export interface WeddingDesign {
 
 export const DESIGNS: WeddingDesign[] = [
   { id:'aangan-se-mandap', no:'01', name:'Aangan Se Mandap',
-    live:'https://angan-ki-duniya.vercel.app/',
+    live:'https://angan-ki-duniya.vercel.app/invite',
     desktopId:'1fuOXWqRKmuO8Gum_WaWxE3OpM4CIb0Au',
     mobileId:'1Yq2L3maQ8JA9-BTffQdSxVgSvb9YKt0H' },
   { id:'vedikarudr', no:'02', name:'VEDIKARUDR',
-    live:'https://vedikarudr.netlify.app/',
+    live:'https://vedika-rudra.vercel.app/invite',
     desktopId:'1DdEU8EdWFf9QAeFF3ukR-xT5pxQ7i-kf',
     mobileId:'1VWJZmDuTHWrxUuqXWogTS8FXnh4I_xhw' },
   { id:'ananya-aarav', no:'03', name:'Ananya Aarav',
-    live:'https://ananyaaaravwed.netlify.app/',
+    live:'https://aarav-ananya-nine.vercel.app/invite',
     desktopId:'1gEx5QZR9dE9CQk_-Pf-1ZVFPmMiFb-dO',
     mobileId:'1LhU0ZVwiKJL3V-y_cZoTi8tvnvuehkmM' },
   { id:'rashmi-vijay', no:'04', name:'Rashmi Vijay',
-    live:'https://rashmikvijay.netlify.app/',
+    live:'https://rashmika-vijay.vercel.app/invite',
     desktopId:'1uU51Bg-1O4QC1I8Z41xLjC370c38jwBB',
     mobileId:'1uU51Bg-1O4QC1I8Z41xLjC370c38jwBB' },
 ];
