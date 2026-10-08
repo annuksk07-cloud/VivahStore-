@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Smartphone, Maximize, Touchpad, Share2, MessageCircle } from 'lucide-react';
+import { Smartphone, Navigation, Touchpad, Share2, MessageCircle } from 'lucide-react';
 import { buildWhatsAppUrl } from '../config/siteConfig.ts';
 
 export const WhyVivahStoreSection: React.FC = () => {
@@ -14,23 +14,23 @@ export const WhyVivahStoreSection: React.FC = () => {
   const cards = [
     {
       icon: Smartphone,
-      title: "Your photo is the app icon",
-      desc: "Guests see your faces every time they open their phone.",
+      title: "Your photo, on their phone",
+      desc: "They see your faces on the home screen, not a file lost in a chat.",
     },
     {
-      icon: Maximize,
-      title: "Opens full screen",
-      desc: "No browser bars. Smooth, stylish, made for phones.",
+      icon: Navigation,
+      title: "Directions in one tap",
+      desc: "The venue opens in Maps. No copying, no pausing a video.",
     },
     {
       icon: Touchpad,
-      title: "Everything in one tap",
-      desc: "Date, venue, map and RSVP. Nothing buried in a chat.",
+      title: "Everything in one place",
+      desc: "Events, music, countdown and RSVP in a single link.",
     },
     {
       icon: Share2,
-      title: "Share once, reach everyone",
-      desc: "One link on WhatsApp for your whole family.",
+      title: "One link for everyone",
+      desc: "Send it once on WhatsApp to the whole family.",
     },
   ];
 
@@ -38,7 +38,7 @@ export const WhyVivahStoreSection: React.FC = () => {
     <section id="why-us" className="relative py-12 sm:py-16 px-5 max-w-[1100px] mx-auto box-border min-w-0">
       <div className="text-center max-w-2xl mx-auto mb-10">
         <h2 className="font-syne font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#12324A] tracking-tight">
-          Your invitation, always on their home screen.
+          What your guests will notice.
         </h2>
       </div>
 

@@ -9,9 +9,12 @@ import { Navbar } from './components/Navbar.tsx';
 import { HeroSection } from './components/HeroSection.tsx';
 import { QuickStrip } from './components/QuickStrip.tsx';
 import { DesignsCarousel } from './components/DesignsCarousel.tsx';
+import { WeddingDaySection } from './components/WeddingDaySection.tsx';
 import { WhyVivahStoreSection } from './components/WhyVivahStoreSection.tsx';
 import { CompareSection } from './components/CompareSection.tsx';
+import { TryItSection } from './components/TryItSection.tsx';
 import { HowItWorksSection } from './components/HowItWorksSection.tsx';
+import { PlansOverviewSection } from './components/PlansOverviewSection.tsx';
 import { FaqSection } from './components/FaqSection.tsx';
 import { FinalCta } from './components/FinalCta.tsx';
 import { Footer } from './components/Footer.tsx';
@@ -34,7 +37,17 @@ export default function App() {
   // Scroll listener to update active navigation tab based on viewport position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'designs', 'why-us', 'how-it-works', 'questions'];
+      const sections = [
+        'hero',
+        'designs',
+        'wedding-day',
+        'why-us',
+        'compare',
+        'try-it',
+        'how-it-works',
+        'packages',
+        'questions',
+      ];
       const scrollY = window.scrollY;
 
       for (const section of sections) {
@@ -81,31 +94,46 @@ export default function App() {
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* 4. Why Vivah Store */}
-        <WhyVivahStoreSection />
+        {/* 4. Wedding day */}
+        <WeddingDaySection />
 
         <WaveDivider className="my-2 sm:my-4" />
 
-        {/* 5. Compare */}
-        <CompareSection />
+        {/* 5. What your guests will notice */}
+        <WhyVivahStoreSection />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* 6. How it works */}
+        {/* 6. Compare */}
+        <CompareSection />
+
+        <WaveDivider className="my-2 sm:my-4" />
+
+        {/* 7. Try it */}
+        <TryItSection />
+
+        <WaveDivider flip className="my-2 sm:my-4" />
+
+        {/* 8. How it works */}
         <HowItWorksSection />
 
         <WaveDivider className="my-2 sm:my-4" />
 
-        {/* 7. Questions */}
+        {/* 9. Plans */}
+        <PlansOverviewSection />
+
+        <WaveDivider flip className="my-2 sm:my-4" />
+
+        {/* 10. FAQ */}
         <FaqSection />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* 8. Final CTA */}
+        {/* 11. Final CTA */}
         <FinalCta />
       </main>
 
-      {/* 9. Footer */}
+      {/* 12. Footer */}
       <Footer />
 
       {/* Floating WhatsApp Action Button */}

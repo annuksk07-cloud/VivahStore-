@@ -30,11 +30,11 @@ export const FinalCta: React.FC = () => {
           </div>
 
           <h2 className="font-syne font-extrabold text-2xl sm:text-4xl lg:text-5xl text-[#12324A] tracking-tight mb-4">
-            Make your invitation an app icon.
+            Let your guests find your wedding in one tap.
           </h2>
 
           <p className="text-base sm:text-xl text-[#12324A]/85 font-medium leading-relaxed mb-8">
-            Send your names, date, venue and favourite design.
+            Send us your names, date and venue on WhatsApp. We take it from there.
           </p>
 
           <div className="flex justify-center">

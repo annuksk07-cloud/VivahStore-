@@ -79,7 +79,7 @@ export const HowItWorksSection: React.FC = () => {
       <div className="text-center mb-8">
         <p className="inline-flex items-center gap-2 font-syne font-bold text-base sm:text-lg text-[#2A8FBD] bg-[#DDF3F8]/60 px-5 py-2 rounded-full border border-white">
           <Clock className="w-5 h-5 text-[#2A8FBD]" />
-          <span>Ready in 48 hours.</span>
+          <span>Ready in 3 to 5 days, depending on your plan.</span>
         </p>
       </div>
 

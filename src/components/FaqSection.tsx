@@ -13,19 +13,23 @@ export const FaqSection: React.FC = () => {
   const faqs = [
     {
       q: "Is it an app?",
-      a: "Yes. It is an app invitation. It sits on the home screen with your photo and opens full screen. No app store needed.",
+      a: "Yes. It sits on the home screen with your photo as the icon and opens full screen. No app store needed.",
     },
     {
-      q: "Do guests download anything?",
-      a: "No. They open your link and tap Add.",
+      q: "Why not a video or a PDF?",
+      a: "Videos and PDFs look nice, but they cannot open Maps. Guests have to pause, scroll and copy the address by hand. Your Vivah Store invitation gives them Directions in one tap.",
+    },
+    {
+      q: "Can my parents and grandparents use it?",
+      a: "Yes. They tap your link, then tap Add. No login and no app store. If they skip Add, the link still opens like a normal website.",
     },
     {
       q: "Does it work on iPhone?",
-      a: "Yes. Tap Share, then Add to Home Screen.",
+      a: "Yes. Tap Share, then Add to Home Screen. On Android, a pop-up helps.",
     },
     {
-      q: "What if a guest skips Add?",
-      a: "The link still opens in the browser.",
+      q: "Do guests need to download anything?",
+      a: "No. They open your link and tap Add.",
     },
     {
       q: "Is Hindi available?",
@@ -33,11 +37,11 @@ export const FaqSection: React.FC = () => {
     },
     {
       q: "How long does it take?",
-      a: "48 hours.",
+      a: "3 to 5 days, depending on your plan.",
     },
     {
       q: "What is the price?",
-      a: "It depends on the design. Message us on WhatsApp for a quote.",
+      a: "Plans start at ₹4,999. Open a design above to see its price, then send your order on WhatsApp.",
     },
   ];
 

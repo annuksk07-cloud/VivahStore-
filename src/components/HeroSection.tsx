@@ -89,7 +89,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass text-xs font-semibold tracking-wider uppercase text-[#2A8FBD] border border-white/80 shadow-sm mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#7FD6E3]" />
-            <span>WEDDING INVITATIONS, REIMAGINED</span>
+            <span>THE INVITATION GUESTS DON'T LOSE</span>
           </div>
 
           {/* Headline */}
@@ -97,12 +97,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
             style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', lineHeight: 1.1 }}
             className="font-syne font-extrabold text-[#12324A] tracking-tight mb-5"
           >
-            Your wedding invitation, <span className="text-gradient-ocean">now an app icon.</span>
+            Your wedding invitation, <span className="text-gradient-ocean">one tap away.</span>
           </h1>
 
           {/* Sub-line */}
           <p className="text-base sm:text-lg text-[#12324A]/85 font-medium leading-relaxed mb-8 max-w-xl">
-            Guests add it to their home screen with your photo as the icon. One tap and your wedding is right there.
+            Guests add it to their phone like an app, with your photo as the icon. The date, the venue and the directions are always one tap away.
           </p>
 
           {/* Buttons */}
@@ -131,7 +131,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDemo }) => {
           {/* Small Line */}
           <p className="text-xs sm:text-sm text-[#12324A]/70 font-medium flex items-center gap-2 mt-1">
             <Smartphone className="w-4 h-4 text-[#2A8FBD]" />
-            <span>Works on Android and iPhone. No app store needed.</span>
+            <span>Works on Android and iPhone. No app store. No login.</span>
           </p>
         </motion.div>
 

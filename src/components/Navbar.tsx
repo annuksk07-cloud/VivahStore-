@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, LayoutGrid, MessageCircle, HelpCircle as QuestionIcon, ShieldCheck } from 'lucide-react';
+import { Sparkles, LayoutGrid, MessageCircle, HelpCircle as QuestionIcon, ShieldCheck, Tag } from 'lucide-react';
 import { SITE_CONFIG, buildWhatsAppUrl } from '../config/siteConfig.ts';
 
 interface NavbarProps {
@@ -20,8 +20,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
   const mobileNavItems = [
     { id: 'designs', label: 'Designs', icon: LayoutGrid },
     { id: 'how-it-works', label: 'Steps', icon: Sparkles },
-    { id: 'why-us', label: 'Why Us', icon: ShieldCheck },
-    { id: 'questions', label: 'Questions', icon: QuestionIcon },
+    { id: 'packages', label: 'Plans', icon: Tag },
+    { id: 'questions', label: 'FAQ', icon: QuestionIcon },
     { id: 'whatsapp', label: 'WhatsApp', icon: MessageCircle, isWhatsApp: true },
   ];
 
@@ -47,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#7FD6E3] to-[#2A8FBD] flex items-center justify-center text-white shadow-sm">
               <Sparkles className="w-4 h-4" />
             </div>
-            <span className="font-syne font-extrabold text-lg tracking-tight text-[#12324A]">
+            <span className="font-syne font-extrabold text-lg tracking-tight text-[#12324A] whitespace-nowrap">
               {SITE_CONFIG.businessName}
             </span>
           </button>
@@ -79,17 +79,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#7FD6E3] to-[#2A8FBD] flex items-center justify-center text-white shadow-md shadow-[#7FD6E3]/40 group-hover:scale-105 transition-transform duration-300">
               <Sparkles className="w-4 h-4" />
             </div>
-            <span className="font-syne font-extrabold text-xl tracking-tight text-[#12324A] flex items-center gap-1.5">
+            <span className="font-syne font-extrabold text-xl tracking-tight text-[#12324A] flex items-center gap-1.5 whitespace-nowrap">
               {SITE_CONFIG.businessName}
               <span className="w-2 h-2 rounded-full bg-[#7FD6E3] animate-pulse" />
             </span>
           </button>
 
-          {/* Nav Links: Designs, How it works, Why Vivah Store, Questions */}
-          <div className="flex items-center gap-7 text-[15px] font-outfit font-semibold text-[#12324A]/80">
+          {/* Nav Links: Designs, Why us, How it works, Plans, FAQ */}
+          <div className="flex items-center gap-6 text-[15px] font-outfit font-semibold text-[#12324A]/80">
             <button
               onClick={() => onNavigate('designs')}
-              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none ${
+              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none whitespace-nowrap ${
                 activeSection === 'designs' ? 'text-[#2A8FBD] font-bold' : ''
               }`}
             >
@@ -105,11 +105,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
 
             <button
               onClick={() => onNavigate('why-us')}
-              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none ${
+              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none whitespace-nowrap ${
                 activeSection === 'why-us' ? 'text-[#2A8FBD] font-bold' : ''
               }`}
             >
-              Why Vivah Store
+              Why us
               {activeSection === 'why-us' && (
                 <motion.div
                   layoutId="desktop-active-dot"
@@ -121,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
 
             <button
               onClick={() => onNavigate('how-it-works')}
-              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none ${
+              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none whitespace-nowrap ${
                 activeSection === 'how-it-works' ? 'text-[#2A8FBD] font-bold' : ''
               }`}
             >
@@ -136,12 +136,28 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             </button>
 
             <button
+              onClick={() => onNavigate('packages')}
+              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none whitespace-nowrap ${
+                activeSection === 'packages' ? 'text-[#2A8FBD] font-bold' : ''
+              }`}
+            >
+              Plans
+              {activeSection === 'packages' && (
+                <motion.div
+                  layoutId="desktop-active-dot"
+                  className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#2A8FBD]"
+                  transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                />
+              )}
+            </button>
+
+            <button
               onClick={() => onNavigate('questions')}
-              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none ${
+              className={`hover:text-[#2A8FBD] transition-colors relative py-2 min-h-[48px] flex items-center cursor-pointer select-none whitespace-nowrap ${
                 activeSection === 'questions' ? 'text-[#2A8FBD] font-bold' : ''
               }`}
             >
-              Questions
+              FAQ
               {activeSection === 'questions' && (
                 <motion.div
                   layoutId="desktop-active-dot"
@@ -157,11 +173,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             href={navWaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="h-[52px] px-6 rounded-full font-outfit font-semibold text-base text-white bg-[#25D366] hover:bg-[#20bd5a] shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 no-underline cursor-pointer select-none border border-white/30"
+            className="h-[52px] px-6 rounded-full font-outfit font-semibold text-base text-white bg-[#25D366] hover:bg-[#20bd5a] shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 no-underline cursor-pointer select-none border border-white/30 whitespace-nowrap"
             aria-label="Chat on WhatsApp"
           >
             <MessageCircle className="w-5 h-5 fill-white" />
-            <span>Chat on WhatsApp</span>
+            <span className="whitespace-nowrap">Chat on WhatsApp</span>
           </a>
         </nav>
       </header>
