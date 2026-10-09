@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { PRICING_CONFIG } from '../config/pricingConfig.ts';
 
 export const FaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -41,7 +42,7 @@ export const FaqSection: React.FC = () => {
     },
     {
       q: "What is the price?",
-      a: "Plans start at ₹4,999. Open a design above to see its price, then send your order on WhatsApp.",
+      a: `Plans start at ₹${PRICING_CONFIG.plans.classic.price.toLocaleString('en-IN')}. Open a design above to see its price, then send your order on WhatsApp.`,
     },
   ];
 
