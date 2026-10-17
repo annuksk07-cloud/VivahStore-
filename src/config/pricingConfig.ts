@@ -76,6 +76,7 @@ export const PRICING_CONFIG: PricingConfig = {
     "VEDIKARUDR": "classic",
     "Rashmi Vijay": "classic",
     "Ananya Aarav": "signature",
+    "Aarav Ananya": "classic",
   },
   allowPlanSwitch: true,
 };

@@ -34,6 +34,10 @@ export const DESIGNS: WeddingDesign[] = [
     live:'https://rashmika-vijay.vercel.app/invite',
     desktopId:'1uU51Bg-1O4QC1I8Z41xLjC370c38jwBB',
     mobileId:'1uU51Bg-1O4QC1I8Z41xLjC370c38jwBB' },
+  { id:'aarav-ananya', no:'05', name:'Aarav Ananya',
+    live:'https://garav-ananya.vercel.app/',
+    desktopId:'1xr3Si8vQ9hkBkAENl5kisXjVmCk6QaIx',
+    mobileId:'1xr3Si8vQ9hkBkAENl5kisXjVmCk6QaIx' },
 ];
 
 export interface SiteConfig {

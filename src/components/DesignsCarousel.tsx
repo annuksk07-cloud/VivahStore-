@@ -37,11 +37,16 @@ const LIVE_DESIGNS = [
     live: 'https://rashmika-vijay.vercel.app/invite',
     mockup: 'https://drive.google.com/file/d/1uU51Bg-1O4QC1I8Z41xLjC370c38jwBB/view?usp=drivesdk',
   },
+  {
+    no: '05',
+    name: 'Aarav Ananya',
+    live: 'https://garav-ananya.vercel.app/',
+    mockup: 'https://drive.google.com/file/d/1xr3Si8vQ9hkBkAENl5kisXjVmCk6QaIx/view?usp=drivesdk',
+  },
 ];
 
 const COMING_SOON_DESIGNS = [
   { id: 'cs-1', label: 'Upcoming Theme' },
-  { id: 'cs-2', label: 'Upcoming Theme' },
 ];
 
 function extractDriveId(urlOrId: string): string {
