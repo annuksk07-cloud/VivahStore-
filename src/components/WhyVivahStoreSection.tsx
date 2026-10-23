@@ -15,12 +15,12 @@ export const WhyVivahStoreSection: React.FC = () => {
     {
       icon: Smartphone,
       title: "Your photo, on their phone",
-      desc: "They see your faces on the home screen, not a file lost in a chat.",
+      desc: "Guests see your faces right on their home screen.",
     },
     {
       icon: Navigation,
       title: "Directions in one tap",
-      desc: "The venue opens in Maps. No copying, no pausing a video.",
+      desc: "The venue opens in Maps in one tap.",
     },
     {
       icon: Touchpad,

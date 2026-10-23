@@ -9,9 +9,7 @@ import { Navbar } from './components/Navbar.tsx';
 import { HeroSection } from './components/HeroSection.tsx';
 import { QuickStrip } from './components/QuickStrip.tsx';
 import { DesignsCarousel } from './components/DesignsCarousel.tsx';
-import { WeddingDaySection } from './components/WeddingDaySection.tsx';
 import { WhyVivahStoreSection } from './components/WhyVivahStoreSection.tsx';
-import { CompareSection } from './components/CompareSection.tsx';
 import { TryItSection } from './components/TryItSection.tsx';
 import { HowItWorksSection } from './components/HowItWorksSection.tsx';
 import { PlansOverviewSection } from './components/PlansOverviewSection.tsx';
@@ -40,9 +38,7 @@ export default function App() {
       const sections = [
         'hero',
         'designs',
-        'wedding-day',
         'why-us',
-        'compare',
         'try-it',
         'how-it-works',
         'packages',
@@ -94,42 +90,32 @@ export default function App() {
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* 4. Wedding day */}
-        <WeddingDaySection />
-
-        <WaveDivider className="my-2 sm:my-4" />
-
-        {/* 5. What your guests will notice */}
+        {/* 4. What your guests will notice */}
         <WhyVivahStoreSection />
 
-        <WaveDivider flip className="my-2 sm:my-4" />
-
-        {/* 6. Compare */}
-        <CompareSection />
-
         <WaveDivider className="my-2 sm:my-4" />
 
-        {/* 7. Try it */}
+        {/* 5. Try it */}
         <TryItSection />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* 8. How it works */}
+        {/* 6. How it works */}
         <HowItWorksSection />
 
         <WaveDivider className="my-2 sm:my-4" />
 
-        {/* 9. Plans */}
+        {/* 7. Plans */}
         <PlansOverviewSection />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* 10. FAQ */}
+        {/* 8. FAQ */}
         <FaqSection />
 
         <WaveDivider flip className="my-2 sm:my-4" />
 
-        {/* 11. Final CTA */}
+        {/* 9. Final CTA */}
         <FinalCta />
       </main>
 

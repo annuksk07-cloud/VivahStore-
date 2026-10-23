@@ -17,10 +17,6 @@ export const FaqSection: React.FC = () => {
       a: "Yes. It sits on the home screen with your photo as the icon and opens full screen. No app store needed.",
     },
     {
-      q: "Why not a video or a PDF?",
-      a: "Videos and PDFs look nice, but they cannot open Maps. Guests have to pause, scroll and copy the address by hand. Your Vivah Store invitation gives them Directions in one tap.",
-    },
-    {
       q: "Can my parents and grandparents use it?",
       a: "Yes. They tap your link, then tap Add. No login and no app store. If they skip Add, the link still opens like a normal website.",
     },
